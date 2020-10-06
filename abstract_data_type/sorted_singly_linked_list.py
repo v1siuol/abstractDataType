@@ -8,8 +8,8 @@ __date = 2017.2.23
 
 
 class SortedSinglyLinkedList:
-    """
-    A singly linked list sorted in increasing order
+    """A singly linked list sorted in increasing order
+    TODO (v1sioul): add an example of usage.
     """
     class Node:
         """
@@ -91,20 +91,24 @@ class SortedSinglyLinkedList:
         self._size += 1
 
     def remove(self,value):
-        """
-        Remove one occurrence of the given value from the list
+        """Remove one occurrence of the given value from the list
+        If value not found, do nothing.
         """
         if self.is_empty():
-            #raise IndexError
             return
         current = self._head
         if current.value == value:
             self._head = self._head.next
+        elif current.next is None:
+            # Contains one element only, but it is not the one we are looking for.
+            return
         else:
             while current.next.value != value:
                 current = current.next
-                if current.next is None:  # remove value not found
+                if current.next is None:  # Remove value not found.
                     return
+
+            # Find removed value, remove it.
             current.next = current.next.next
             if current.next is None:
                 self._tail = current
