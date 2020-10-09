@@ -13,3 +13,5 @@ install:
 # command to run tests
 script:
   - python -m unittest discover -s tests -p "test_*.py"
+after_success:
+  - bash <(curl -s https://codecov.io/bash)
