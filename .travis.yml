@@ -1,6 +1,5 @@
 language: python
 python:
-  - "3.4"
   - "3.5"
   - "3.6"      # current default Python on Travis CI
   - "3.7"
@@ -13,3 +12,5 @@ install:
 # command to run tests
 script:
   - python -m unittest discover -s tests -p "test_*.py"
+after_success:
+  - bash <(curl -s https://codecov.io/bash)
