@@ -37,12 +37,6 @@ class StackUsingLinkedList:
             """
             return self._next
 
-        @next.setter
-        def next(self, new_next):
-            """Setter
-            """
-            self._next = new_next
-
     def __init__(self):
         """
         constructor for an empty linkedlist

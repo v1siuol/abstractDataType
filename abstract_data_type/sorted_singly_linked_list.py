@@ -27,12 +27,6 @@ class SortedSinglyLinkedList:
             """
             return self._value
 
-        @value.setter
-        def value(self, new_value):
-            """Setter
-            """
-            self._value = new_value
-
         @property
         def next(self):
             """Getter
