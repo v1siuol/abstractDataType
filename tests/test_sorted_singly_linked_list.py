@@ -140,13 +140,20 @@ class TestSortedSinglyLinkedList(unittest.TestCase):
         self.assertEqual(linked_list.bot(), 2)
         self.assertEqual(str(linked_list), '1 2')
 
+        # Tests non-exist value removal when linked list has multiple elements.
+        linked_list.remove(3)
+        self.assertEqual(len(linked_list), 2)
+        self.assertEqual(linked_list.top(), 1)
+        self.assertEqual(linked_list.bot(), 2)
+        self.assertEqual(str(linked_list), '1 2')
+
         linked_list.remove(2)
         self.assertEqual(len(linked_list), 1)
         self.assertEqual(linked_list.top(), 1)
         self.assertEqual(linked_list.bot(), 1)
         self.assertEqual(str(linked_list), '1')
 
-        # Tests non-exist value removal when linked list is not empty.
+        # Tests non-exist value removal when linked list has only one element.
         linked_list.remove(2)
         self.assertEqual(len(linked_list), 1)
         self.assertEqual(linked_list.top(), 1)
